@@ -76,5 +76,31 @@ public class ProductOfArrayExceptSelf {
         return ans;
     }
 
+    public int[] productExceptSelf3(int[] nums) {
+
+        int n = nums.length;
+        //calculate prefix first
+        int[] prefix = new int[n];
+        prefix[0] = 1;
+        for (int i = 1; i < n; i++) {
+            prefix[i] = prefix[i-1] * nums[i-1];
+            // System.out.println(prefix[i]);
+        }
+
+        // int[] postfix = new int[n];
+        // postfix[n-1] = 1;
+        // for (int i = n-2; i >= 0; i--) {
+        //     postfix[i] = postfix[i+1] * nums[i+1];
+        //                 System.out.println("---."+postfix[i]);
+
+        // }
+        int postfix =1;
+        for (int i = n-1; i >= 0; i--) {
+            prefix[i]=prefix[i]*postfix;
+            postfix *= nums[i];
+        }
+        return prefix;
+    }
+
 
 }
