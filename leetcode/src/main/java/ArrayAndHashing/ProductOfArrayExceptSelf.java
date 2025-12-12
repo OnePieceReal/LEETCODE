@@ -76,6 +76,7 @@ public class ProductOfArrayExceptSelf {
         return ans;
     }
 
+    //2ms - beats 92% solution
     public int[] productExceptSelf3(int[] nums) {
 
         int n = nums.length;
