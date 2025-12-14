@@ -12,7 +12,7 @@ public class LongestConsecutiveSequence {
         int seqLength=1;
         for(int a : set ){
             //get all the start of the consecutive elements
-            if(!set.contains(a-1) && set.contains(a+1)){
+            if(!set.contains(a-1)){
                 int length=1;
                 int val=a+1;
                 while(set.contains(val)){
